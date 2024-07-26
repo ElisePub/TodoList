@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  @apply bg-bg-primary text-text-primary;
+
+  min-height: fit-content;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: "PoetsenOne";
+  src: url('/PoetsenOne-Regular.ttf') format("truetype");
+}
+
+body {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.customfont {
+  @apply font-poetsen text-lg text-white;
+}
+
+@layer components {
+  .transition-style {
+    .fade-enter-from {
+      opacity: 0;
+    }
+    .fade-enter-to {
+      opacity: 1;
+    }
+    .fade-enter-active {
+      transition: all 1s ease;
+    }
+  }
+  .transition-group-style {
+    .list-enter-active{
+      transition: all 1s ease;
+
+    }
+    .list-leave-active {
+      transition: all 0s ease;
+    }
+    .list-enter-from,
+    .list-leave-to {
+      opacity: 0;
+    }
+    .list-leave-active {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
